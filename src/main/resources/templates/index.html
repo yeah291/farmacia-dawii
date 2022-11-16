@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html lang="es"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de productos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+</head>
+<body>
+
+
+<div class="container">
+    <br>
+    <h1 style="text-align: center;">Listado de productos</h1>
+    <div>
+        <a type="button" class="btn btn-primary" th:href="@{/agregar}">Agregar Producto</a>
+    </div>
+    <p></p>
+    <div th:classappend="'alert-' + (${clase != null} ? ${clase} : info)" th:if="${mensaje != null}"
+         class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong th:text="${mensaje}"></strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+
+
+    <div class="row row-cols-1 row-cols-md-3 row-cols-xl-4 g-4">
+        <div class="col" th:each="p : ${productos}">
+            <div class="card h-100">
+                <img th:src="${p.urlFoto}" class="card-img-top" th:alt="${p.descripcion}" height="250px">
+                <div class="card-body">
+                    <h5 class="card-title" th:text="${p.idProducto}+' - '+${p.descripcion}"></h5>
+                    <p class="card-text" th:text="'Stock: ' + ${p.stock}"></p>
+                    <p class="card-text" th:text="'Categoría: ' + ${p.categoria.nomcat}"></p>
+                    <h5 class="fw-bold text-success" th:text="'S/ '+${p.precio}"></h5><br>
+
+                    <div style="text-align: center">
+                        <a class="btn btn-warning" th:href="@{/editar/} + ${p.idProducto}">Editar</a>
+                        <a class="btn btn-danger" th:href="@{/eliminar/} + ${p.idProducto}"/>Eliminar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+</body>
+</html>
