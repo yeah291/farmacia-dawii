@@ -1,3 +1,16 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package com.cibertec.demo.entity;
+
+/**
+ *
+ * @author CESAR
+ */
+public class ADVERTENCIA {
+    
+    
 #QUEDA PROHIBIDO EL USO DE MI CODIGO PARA SU PROYECTO - CESAR AGUILAR ZAMBRANO
 #QUEDA PROHIBIDO EL USO DE MI CODIGO PARA SU PROYECTO - CESAR AGUILAR ZAMBRANO
 #QUEDA PROHIBIDO EL USO DE MI CODIGO PARA SU PROYECTO - CESAR AGUILAR ZAMBRANO
@@ -13,3 +26,5 @@
 #QUEDA PROHIBIDO EL USO DE MI CODIGO PARA SU PROYECTO - CESAR AGUILAR ZAMBRANO
 #QUEDA PROHIBIDO EL USO DE MI CODIGO PARA SU PROYECTO - CESAR AGUILAR ZAMBRANO
 
+    
+}
